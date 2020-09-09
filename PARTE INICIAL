@@ -1,0 +1,82 @@
+package sumamatrices;
+//EN EL PRESENTE TRABAJO VAMOS A REALIZAR LA SUMA DE MATRICES 
+//ESTUDIANTE: BYRON CUENCA
+import java.util.Scanner;
+
+public class SumaMatriz {
+
+    int[][] entero1;
+    int[][] entero2;
+    int[][] resultado1;
+
+    public SumaMatriz(int i, int j) {
+        entero1 = new int[i][j];
+        entero2 = new int[i][j];
+        resultado1 = new int[i][j];
+    }
+
+    public void llenarMatriz() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("");
+        System.out.println("\033[35mDatos de la matriz A\033[m");
+        for (int i = 0; i < entero1.length; i++) {
+            for (int j = 0; j < entero1.length; j++) {
+                System.out.print("\033[36mFILA: " + i + " COLUMNA: " + j + " = \033[m");
+                entero1[i][j] = entrada.nextInt();
+            }
+        }
+        System.out.println("");
+        System.out.println("\033[35mDatos de la matriz B\033[m");
+        for (int i = 0; i < entero2.length; i++) {
+            for (int j = 0; j < entero2[i].length; j++) {
+                System.out.print("\033[36mFILA: " + i + " COLUMNA: " + j + " = \033[m");
+                entero2[i][j] = entrada.nextInt();
+
+            }
+        }
+    }
+
+    public void imprimirMatriz() {
+        System.out.println(""
+                + "\n\033[32mMatriz A\033[m");
+        for (int[] entero11 : entero1) {
+            for (int j = 0; j < entero1.length; j++) {
+                System.out.print(entero11[j] + "  ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println(""
+                + "\n\033[32mMatriz B\033[m");
+        for (int[] entero21 : entero2) {
+            for (int j = 0; j < entero2.length; j++) {
+                System.out.print(entero21[j] + "  ");
+            }
+            System.out.println(" ");
+        }
+    }
+
+    public int[][] sumarMatrices() {
+        System.out.println(""
+                + "\n  \033[31mSUMA\033[m");
+
+        for (int i = 0; i < resultado1.length; i++) {
+            for (int j = 0; j < resultado1.length; j++) {
+                resultado1[i][j] = entero1[i][j] + entero2[i][j];
+            }
+        }
+        for (int i = 0; i < resultado1.length; i++) {
+            for (int j = 0; j < resultado1.length; j++) {
+                System.out.println("" + entero1[i][j] + " + " + entero2[i][j] + " = " + resultado1[i][j]);
+            }
+        }
+        System.out.println(""
+                + "\n\033[36mRESULTADO\033[m");
+        for (int[] resultado11 : resultado1) {
+            for (int j = 0; j < resultado1.length; j++) {
+                System.out.print(resultado11[j] + "  ");
+            }
+            System.out.println("   ");
+        }
+        return resultado1;
+    }
+}
