@@ -1,0 +1,20 @@
+package sumamatriz;
+//AQUI PROCEDEMOS A CREAR EL METODO MAIN Y DONDE DARA FUNCIONAMIENTO EL PROGRAMA
+import java.util.Scanner;
+import sumamatrices.SumaMatriz;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("\033[34mNÚMERO DE FILAS:\033[m");
+        int i = entrada.nextInt();
+        System.out.println("\033[34mNÚMERO DE COLUMNAS:\033[m");
+        int j = entrada.nextInt();
+        SumaMatriz m = new SumaMatriz(i, j);
+        m.llenarMatriz();
+        m.imprimirMatriz();
+        m.sumarMatrices();
+    }
+}
+//BYRON CUENCA 
